@@ -1,24 +1,23 @@
-import logo from './logo.svg';
-import './App.css';
+import Loader from "./components/loader/Loader";
+import TodoForm from "./components/todo-form/TodoForm";
+import TodoContext from "./context/todo-context/TodoContext";
 
 function App() {
+  console.log(process.env.REACT_APP_PLACEHOLDER_URL);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+    
+      <div className="container">
+
+        <TodoContext>
+          <Loader />
+          <TodoForm>
+          </TodoForm>
+        </TodoContext>
+
+      </div>
+
+    </>
   );
 }
 
